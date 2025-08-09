@@ -37,6 +37,7 @@ gen cusip_6_digit=substr(cusip,1,6)
 *********************************
 * Suggest to firstly collect ISIN from WRDS Compustat Global - Fundamentals Annual
 *ISIN: International Securities Identification Number
+*Convert ISIN to  9-digit CUSIP
 *********************************
 
 gen cusip_9_digit_from_isin=substr(ISIN,3,9)
@@ -47,5 +48,6 @@ gen cusip_9_digit_from_isin=substr(ISIN,3,9)
 *********************************
 * Show all links to other datasets
 list company_name cusip cusip_8_digit cusip_6_digit cusip_9_digit_from_isin
+
 
 save company_ids.dta,replace
